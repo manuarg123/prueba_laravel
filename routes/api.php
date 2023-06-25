@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Api\CategoryController;
 use App\Http\Controllers\Api\EntityController;
+use App\Http\Controllers\Api\APIController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,4 +27,8 @@ Route::controller(CategoryController::class)->group(function(){
 
 Route::controller(EntityController::class)->group(function(){
     Route::get('/entities','index');
+});
+
+Route::controller(APIController::class)->group(function(){
+    Route::get('/{category}', 'index');
 });
